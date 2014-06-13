@@ -4,7 +4,7 @@ function DOMParser(options){
 }
 DOMParser.prototype.parseFromString = function(source,mimeType){	
 	var options = this.options;
-	var sax =  new XMLReader();
+	var sax = options.xmlReader || new XMLReader();
 	var domBuilder = options.domBuilder || new DOMHandler();//contentHandler and LexicalHandler
 	var errorHandler = options.errorHandler;
 	var locator = options.locator;
